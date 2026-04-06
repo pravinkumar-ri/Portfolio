@@ -9,8 +9,6 @@ const Home = () => {
     const [loopNum, setLoopNum] = useState(0);
     const [typingSpeed, setTypingSpeed] = useState(150);
     
-    // Fix: Move roles array inside useEffect or wrap with useMemo
-    // Solution 1: Move inside useEffect (Recommended)
     useEffect(() => {
         const roles = ["Web Developer", "Full Stack Developer"];
         
@@ -38,7 +36,7 @@ const Home = () => {
         
         const timer = setTimeout(handleTyping, typingSpeed);
         return () => clearTimeout(timer);
-    }, [displayText, isDeleting, loopNum, typingSpeed]); // roles removed from dependencies
+    }, [displayText, isDeleting, loopNum, typingSpeed]);
     
     return (
         <>
