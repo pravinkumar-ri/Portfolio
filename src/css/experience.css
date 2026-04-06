@@ -1,0 +1,302 @@
+.experience-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.experience-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    background: linear-gradient(135deg, #ffffff, #ff3366);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 1rem;
+}
+
+.experience-title-underline {
+    width: 6rem;
+    height: 0.25rem;
+    background: linear-gradient(90deg, #ff3366, #ff6699);
+    margin: 0 auto;
+    border-radius: 9999px;
+}
+
+.experience-subtitle {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.1rem;
+    margin-top: 1rem;
+}
+
+@media (min-width: 768px) {
+    .experience-title {
+        font-size: 3rem;
+    }
+}
+
+.experience-timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.experience-timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(180deg, #ff3366, #ff6699, #ff3366);
+    border-radius: 3px;
+}
+
+@media (max-width: 768px) {
+    .experience-timeline::before {
+        left: 30px;
+    }
+}
+
+.experience-card {
+    position: relative;
+    width: calc(50% - 40px);
+    margin: 2rem 0;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    animation: fadeInUp 0.6s ease backwards;
+}
+
+.experience-card:nth-child(odd) {
+    left: 0;
+}
+
+.experience-card:nth-child(even) {
+    left: calc(50% + 40px);
+}
+
+@media (max-width: 768px) {
+    .experience-card {
+        width: calc(100% - 80px);
+        left: 80px !important;
+        margin: 1.5rem 0;
+    }
+}
+
+.experience-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #ff3366, #ff6699);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    transform-origin: left;
+}
+
+.experience-card:hover::before {
+    transform: scaleX(1);
+}
+
+.experience-card:hover {
+    background: rgba(255, 51, 102, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-top: 1px solid rgba(255, 51, 102, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(255, 51, 102, 0.3);
+    transform: translateY(-4px);
+}
+
+.experience-year-badge {
+    position: absolute;
+    top: -12px;
+    right: -12px;
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(5px);
+    padding: 5px 12px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: #ff3366;
+    border: 1px solid rgba(255, 51, 102, 0.3);
+    z-index: 1;
+}
+
+.experience-card:nth-child(even) .experience-year-badge {
+    right: auto;
+    left: -12px;
+}
+
+@media (max-width: 768px) {
+    .experience-year-badge {
+        top: -12px;
+        right: -12px;
+        left: auto !important;
+    }
+}
+
+.experience-icon {
+    margin-bottom: 1rem;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.experience-card:hover .experience-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.experience-role {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.experience-card:hover .experience-role {
+    color: #ff3366;
+}
+
+.experience-company {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 0.5rem;
+}
+
+.experience-location {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.experience-description {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 1rem;
+}
+
+.experience-description li {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.experience-description li::before {
+    content: "▹";
+    color: #ff3366;
+    font-size: 0.8rem;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .experience-card {
+        padding: 1.2rem;
+    }
+    
+    .experience-role {
+        font-size: 1.1rem;
+    }
+    
+    .experience-company {
+        font-size: 0.9rem;
+    }
+    
+    .experience-description li {
+        font-size: 0.8rem;
+    }
+    
+    .experience-card:hover {
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+    }
+}
+
+.experience-tech-stack {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tech-category {
+    margin-bottom: 1rem;
+}
+
+.tech-category-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #ff3366;
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-left: 1.5rem;
+}
+
+.tech-tag {
+    background: rgba(255, 51, 102, 0.15);
+    color: #ff3366;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.tech-tag.soft-skill {
+    background: rgba(97, 218, 251, 0.15);
+    color: #61DAFB;
+}
+
+.experience-card:hover .tech-tag {
+    background: rgba(255, 51, 102, 0.3);
+    transform: translateY(-1px);
+}
+
+.experience-card:hover .tech-tag.soft-skill {
+    background: rgba(97, 218, 251, 0.3);
+}
+
+@media (max-width: 768px) {
+    .tech-tags {
+        margin-left: 1rem;
+    }
+    
+    .tech-tag {
+        font-size: 0.7rem;
+        padding: 0.2rem 0.6rem;
+    }
+    
+    .tech-category-title {
+        font-size: 0.8rem;
+    }
+}
