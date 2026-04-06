@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 import Header from "../component/header";
 import { Code, Server, Database, ArrowRight, Briefcase } from 'lucide-react';
 import { FaGithub, FaLinkedin, FaInstagram, FaEnvelope } from 'react-icons/fa';
@@ -9,8 +10,6 @@ const Home = () => {
     const [loopNum, setLoopNum] = useState(0);
     const [typingSpeed, setTypingSpeed] = useState(150);
     
-    // Fix: Move roles array inside useEffect or wrap with useMemo
-    // Solution 1: Move inside useEffect (Recommended)
     useEffect(() => {
         const roles = ["Web Developer", "Full Stack Developer"];
         
@@ -38,7 +37,7 @@ const Home = () => {
         
         const timer = setTimeout(handleTyping, typingSpeed);
         return () => clearTimeout(timer);
-    }, [displayText, isDeleting, loopNum, typingSpeed]); // roles removed from dependencies
+    }, [displayText, isDeleting, loopNum, typingSpeed]);
     
     return (
         <>
@@ -86,17 +85,17 @@ const Home = () => {
                             </div>
                             
                             <div className="hero-buttons">
-                                <a href="/contact" className="btn btn-primary">
+                                <NavLink to="/contact" className="btn btn-primary">
                                     Contact Me
                                     <ArrowRight size={18} />
-                                </a>
-                                <a href="/experience" className="btn btn-secondary">
+                                </NavLink>
+                                <NavLink to="/experience" className="btn btn-secondary">
                                     <Briefcase size={18} />
                                     Experience
-                                </a>
-                                <a href="/projects" className="btn btn-secondary">
+                                </NavLink>
+                                <NavLink to="/projects" className="btn btn-secondary">
                                     View Projects
-                                </a>
+                                </NavLink>
                             </div>
                             
                             <div className="social-links">
