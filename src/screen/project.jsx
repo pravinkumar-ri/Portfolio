@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../component/header";
-import { Globe, Cloud, Camera, Code, ExternalLink } from 'lucide-react';
+import { Globe, Cloud, Camera, Code, ExternalLink, BarChart3 } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa';
 
 const Project = () => {
@@ -18,17 +18,28 @@ const Project = () => {
         },
         {
             id: 2,
+            name: "Business Dashboard",
+            description: "A comprehensive business analytics dashboard with real-time data visualization, sales tracking, and performance metrics. Features interactive charts, user management, and responsive design.",
+            techStack: ["React", "Chart.js", "CSS3", "REST API"],
+            liveLink: "https://business-dashboard-ri-max.netlify.app/",
+            githubLink: "https://github.com/pravinkumar-ri/business-dashboard",
+            icon: BarChart3,
+            color: "#FF6B6B",
+            image: "📊"
+        },
+        {
+            id: 3,
             name: "Gallerie",
             description: "An elegant photo gallery website showcasing beautiful images with smooth animations and lightbox functionality.",
             techStack: ["HTML5", "CSS3", "JavaScript", "Grid Layout"],
             liveLink: "https://gallerie-website.netlify.app/",
             githubLink: "#",
             icon: Camera,
-            color: "#FF6B6B",
+            color: "#FFA500",
             image: "📸"
         },
         {
-            id: 3,
+            id: 4,
             name: "Weather App",
             description: "Real-time weather application providing current weather conditions, 5-day forecast, and location-based weather updates.",
             techStack: ["React", "OpenWeather API", "CSS3", "Axios"],
@@ -39,8 +50,8 @@ const Project = () => {
             image: "⛅"
         },
         {
-            id: 4,
-            name: "Project 4",
+            id: 5,
+            name: "Project 5",
             description: "Coming soon... An exciting new project under development.",
             techStack: ["Coming Soon"],
             liveLink: "#",
@@ -51,8 +62,8 @@ const Project = () => {
             comingSoon: true
         },
         {
-            id: 5,
-            name: "Project 5",
+            id: 6,
+            name: "Project 6",
             description: "Coming soon... Another amazing project in the works.",
             techStack: ["Coming Soon"],
             liveLink: "#",
@@ -63,18 +74,6 @@ const Project = () => {
             comingSoon: true
         },
         {
-            id: 6,
-            name: "Project 6",
-            description: "Coming soon... Stay tuned for updates.",
-            techStack: ["Coming Soon"],
-            liveLink: "#",
-            githubLink: "#",
-            icon: Code,
-            color: "#1ABC9C",
-            image: "🎯",
-            comingSoon: true
-        },
-        {
             id: 7,
             name: "Project 7",
             description: "Coming soon... More innovative solutions coming your way.",
@@ -82,8 +81,8 @@ const Project = () => {
             liveLink: "#",
             githubLink: "#",
             icon: Code,
-            color: "#E74C3C",
-            image: "🌟",
+            color: "#1ABC9C",
+            image: "🎯",
             comingSoon: true
         }
     ];
