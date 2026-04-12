@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import Header from "../component/header";
-import { Code, Server, Database, ArrowRight, Briefcase } from 'lucide-react';
-import { FaGithub, FaLinkedin, FaInstagram, FaEnvelope } from 'react-icons/fa';
+import { ArrowRight, Briefcase } from 'lucide-react';
+import { roles, skillBadges, socialLinks, aboutText } from "../data/homeData";
 
 const Home = () => {
     const [displayText, setDisplayText] = useState("");
@@ -11,8 +11,6 @@ const Home = () => {
     const [typingSpeed, setTypingSpeed] = useState(150);
     
     useEffect(() => {
-        const roles = ["Web Developer", "Full Stack Developer"];
-        
         const handleTyping = () => {
             const currentRole = roles[loopNum % roles.length];
             const currentText = displayText;
@@ -60,28 +58,19 @@ const Home = () => {
                             <div className="about-section">
                                 <h2 className="about-title">About Me</h2>
                                 <div className="about-underline"></div>
-                                <p className="about-description">
-                                    Mechanical Engineering graduate (2024) transitioning into software development. 
-                                    Combining an analytical engineering background with technical proficiency in 
-                                    Full Stack Development. Skilled in building responsive web applications using 
-                                    HTML, CSS, JavaScript, and ReactJS on the frontend, with a robust Node.js and 
-                                    MySQL backend foundation.
-                                </p>
+                                <p className="about-description">{aboutText}</p>
                             </div>
                             
                             <div className="skills-highlight">
-                                <div className="skill-badge">
-                                    <Code size={20} color="#ff3366" />
-                                    <span>Frontend</span>
-                                </div>
-                                <div className="skill-badge">
-                                    <Server size={20} color="#ff3366" />
-                                    <span>Backend</span>
-                                </div>
-                                <div className="skill-badge">
-                                    <Database size={20} color="#ff3366" />
-                                    <span>Database</span>
-                                </div>
+                                {skillBadges.map((badge, index) => {
+                                    const IconComponent = badge.icon;
+                                    return (
+                                        <div key={index} className="skill-badge">
+                                            <IconComponent size={20} color={badge.color} />
+                                            <span>{badge.name}</span>
+                                        </div>
+                                    );
+                                })}
                             </div>
                             
                             <div className="hero-buttons">
@@ -99,18 +88,19 @@ const Home = () => {
                             </div>
                             
                             <div className="social-links">
-                                <a href="https://github.com/pravinkumar-ri" target="_blank" rel="noopener noreferrer" className="social-icon">
-                                    <FaGithub size={22} />
-                                </a>
-                                <a href="https://www.linkedin.com/in/pravin-kumar-ri/" target="_blank" rel="noopener noreferrer" className="social-icon">
-                                    <FaLinkedin size={22} />
-                                </a>
-                                <a href="https://www.instagram.com/ri__pravin/" target="_blank" rel="noopener noreferrer" className="social-icon">
-                                    <FaInstagram size={22} />
-                                </a>
-                                <a href="mailto:pravin7kumar200327@gmail.com" className="social-icon">
-                                    <FaEnvelope size={22} />
-                                </a>
+                                {socialLinks.map((social, index) => {
+                                    const IconComponent = social.icon;
+                                    return (
+                                        <a 
+                                            key={index}
+                                            href={social.url} 
+                                            target="_blank" 
+                                            rel="noopener noreferrer" 
+                                            className="social-icon">
+                                            <IconComponent size={social.size} />
+                                        </a>
+                                    );
+                                })}
                             </div>
                         </div>
                     </div>

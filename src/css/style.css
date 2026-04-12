@@ -10,9 +10,19 @@
     font-family: 'Poppins', sans-serif;
 }
 
+:root {
+    --primary-color: #ff3366;
+    --secondary-color: #ff6699;
+    --primary-gradient: linear-gradient(135deg, #ff3366, #ff6699);
+    --dark-bg: rgba(0, 0, 0, 0.9);
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 html {
     -ms-overflow-style: none;
     scrollbar-width: none;
+    scroll-behavior: smooth;
 }
 
 html::-webkit-scrollbar {
@@ -32,6 +42,10 @@ body {
 
 body::-webkit-scrollbar {
     display: none;
+}
+
+body.menu-open {
+    overflow: hidden;
 }
 
 .nav-container {
@@ -114,6 +128,18 @@ body::-webkit-scrollbar {
 .main-content {
     min-height: calc(100vh - 100px);
     padding: 120px 9% 20px 9%;
+    animation: pageFadeIn 0.5s ease-out;
+}
+
+@keyframes pageFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @media (max-width: 950px) {
@@ -561,6 +587,7 @@ body::-webkit-scrollbar {
 .highlight {
     color: #ff3366;
     position: relative;
+    animation: subtlePulse 2s ease-in-out infinite;
 }
 
 .highlight::after {
@@ -595,6 +622,15 @@ body::-webkit-scrollbar {
     .highlight::after {
         width: 30%;
         bottom: 2px;
+    }
+}
+
+@keyframes subtlePulse {
+    0%, 100% {
+        text-shadow: 0 0 0px rgba(255, 51, 102, 0);
+    }
+    50% {
+        text-shadow: 0 0 10px rgba(255, 51, 102, 0.5);
     }
 }
 
@@ -764,10 +800,6 @@ body::-webkit-scrollbar {
     100% { transform: translateY(0px); }
 }
 
-body.menu-open {
-    overflow: hidden;
-}
-
 .circle {
     position: fixed;
     border-radius: 50%;
@@ -864,15 +896,13 @@ h1 {
     }
 }
 
-@keyframes subtlePulse {
-    0%, 100% {
-        text-shadow: 0 0 0px rgba(255, 51, 102, 0);
-    }
-    50% {
-        text-shadow: 0 0 10px rgba(255, 51, 102, 0.5);
-    }
+a:focus-visible, 
+button:focus-visible, 
+.btn:focus-visible {
+    outline: 2px solid #ff3366;
+    outline-offset: 2px;
 }
 
-.highlight {
-    animation: subtlePulse 2s ease-in-out infinite;
+a, button, .btn, .nav-link, .project-card, .skill-card, .contact-card {
+    cursor: pointer;
 }

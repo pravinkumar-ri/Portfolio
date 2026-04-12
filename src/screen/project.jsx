@@ -1,92 +1,10 @@
 import React from "react";
 import Header from "../component/header";
-import { Globe, Cloud, Camera, Code, ExternalLink, BarChart3 } from 'lucide-react';
+import { allProjects } from "../data/projectData";
+import { ExternalLink } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa';
 
 const Project = () => {
-    const projects = [
-        {
-            id: 1,
-            name: "Travelix Website",
-            description: "A modern travel booking platform with beautiful UI and responsive design. Features include destination search, hotel booking, and travel packages.",
-            techStack: ["React", "CSS3", "JavaScript", "REST API"],
-            liveLink: "https://travelix-website-app.netlify.app/",
-            githubLink: "#",
-            icon: Globe,
-            color: "#00CED1",
-            image: "🌍"
-        },
-        {
-            id: 2,
-            name: "Business Dashboard",
-            description: "A comprehensive business analytics dashboard with real-time data visualization, sales tracking, and performance metrics. Features interactive charts, user management, and responsive design.",
-            techStack: ["React", "Chart.js", "CSS3", "REST API"],
-            liveLink: "https://business-dashboard-ri-max.netlify.app/",
-            githubLink: "https://github.com/pravinkumar-ri/business-dashboard",
-            icon: BarChart3,
-            color: "#FF6B6B",
-            image: "📊"
-        },
-        {
-            id: 3,
-            name: "Gallerie",
-            description: "An elegant photo gallery website showcasing beautiful images with smooth animations and lightbox functionality.",
-            techStack: ["HTML5", "CSS3", "JavaScript", "Grid Layout"],
-            liveLink: "https://gallerie-website.netlify.app/",
-            githubLink: "#",
-            icon: Camera,
-            color: "#FFA500",
-            image: "📸"
-        },
-        {
-            id: 4,
-            name: "Weather App",
-            description: "Real-time weather application providing current weather conditions, 5-day forecast, and location-based weather updates.",
-            techStack: ["React", "OpenWeather API", "CSS3", "Axios"],
-            liveLink: "https://pravinkumar-ri.github.io/weather_app/",
-            githubLink: "https://github.com/pravinkumar-ri/weather_app",
-            icon: Cloud,
-            color: "#4A90E2",
-            image: "⛅"
-        },
-        {
-            id: 5,
-            name: "Project 5",
-            description: "Coming soon... An exciting new project under development.",
-            techStack: ["Coming Soon"],
-            liveLink: "#",
-            githubLink: "#",
-            icon: Code,
-            color: "#9B59B6",
-            image: "🚀",
-            comingSoon: true
-        },
-        {
-            id: 6,
-            name: "Project 6",
-            description: "Coming soon... Another amazing project in the works.",
-            techStack: ["Coming Soon"],
-            liveLink: "#",
-            githubLink: "#",
-            icon: Code,
-            color: "#E67E22",
-            image: "💡",
-            comingSoon: true
-        },
-        {
-            id: 7,
-            name: "Project 7",
-            description: "Coming soon... More innovative solutions coming your way.",
-            techStack: ["Coming Soon"],
-            liveLink: "#",
-            githubLink: "#",
-            icon: Code,
-            color: "#1ABC9C",
-            image: "🎯",
-            comingSoon: true
-        }
-    ];
-
     return (
         <>
             <Header />
@@ -99,7 +17,7 @@ const Project = () => {
                     </div>
 
                     <div className="projects-grid">
-                        {projects.map((project, index) => {
+                        {allProjects.map((project, index) => {
                             const IconComponent = project.icon;
                             return (
                                 <div 
@@ -147,7 +65,7 @@ const Project = () => {
                                             </>
                                         ) : (
                                             <div className="coming-soon-badge">
-                                                <Code size={18} />
+                                                <IconComponent size={18} />
                                                 Coming Soon
                                             </div>
                                         )}
