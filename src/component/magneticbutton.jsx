@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 
-export const MagneticButton = ({
+const MagneticButton = ({
     children,
     strength = 0.35,
     className = '',
@@ -44,3 +44,5 @@ export const MagneticButton = ({
         </Tag>
     );
 };
+
+export default MagneticButton;
