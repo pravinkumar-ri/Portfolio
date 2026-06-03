@@ -1,4 +1,3 @@
-// component/particleCanvas.jsx
 import { useEffect, useRef } from 'react';
 
 export const ParticleCanvas = () => {
@@ -24,7 +23,6 @@ export const ParticleCanvas = () => {
         };
         window.addEventListener('mousemove', onMouseMove);
 
-        // Particle factory
         const createParticle = () => ({
             x: Math.random() * canvas.width,
             y: Math.random() * canvas.height,
@@ -32,7 +30,6 @@ export const ParticleCanvas = () => {
             vy: (Math.random() - 0.5) * 0.4,
             radius: Math.random() * 1.8 + 0.3,
             alpha: Math.random() * 0.5 + 0.1,
-            // hue in the pink-rose range
             hue: Math.random() * 30 + 340,
         });
 
@@ -47,11 +44,9 @@ export const ParticleCanvas = () => {
             const LINK_DIST = 120;
             const REPEL_DIST = 100;
 
-            // Update + draw each particle
             for (let i = 0; i < particles.length; i++) {
                 const p = particles[i];
 
-                // Repel from mouse
                 const dx = p.x - mouse.x;
                 const dy = p.y - mouse.y;
                 const dist = Math.sqrt(dx * dx + dy * dy);
@@ -61,27 +56,22 @@ export const ParticleCanvas = () => {
                     p.vy += (dy / dist) * force * 0.6;
                 }
 
-                // Dampen velocity
                 p.vx *= 0.98;
                 p.vy *= 0.98;
-
                 p.x += p.vx;
                 p.y += p.vy;
 
-                // Wrap edges
                 if (p.x < 0) p.x = canvas.width;
                 if (p.x > canvas.width) p.x = 0;
                 if (p.y < 0) p.y = canvas.height;
                 if (p.y > canvas.height) p.y = 0;
 
-                // Draw particle
                 ctx.beginPath();
                 ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
                 ctx.fillStyle = `hsla(${p.hue}, 90%, 68%, ${p.alpha})`;
                 ctx.fill();
             }
 
-            // Draw links between close particles
             for (let i = 0; i < particles.length; i++) {
                 for (let j = i + 1; j < particles.length; j++) {
                     const a = particles[i];

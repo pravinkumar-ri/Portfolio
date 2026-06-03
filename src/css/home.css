@@ -1,7 +1,3 @@
-/* =============================================
-   HOME PAGE — Cinematic hero + scramble glow
-   ============================================= */
-
 .hero-section {
     min-height: calc(100vh - 120px);
     display: flex;
@@ -11,7 +7,6 @@
     position: relative;
 }
 
-/* Radial spotlight */
 .hero-section::before {
     content: '';
     position: absolute;
@@ -38,7 +33,6 @@
     z-index: 1;
 }
 
-/* ── Greeting ── */
 .greeting-text {
     font-size: 1.2rem;
     color: rgba(255,255,255,0.8);
@@ -71,7 +65,6 @@
     50% { transform: rotate(10deg); }
 }
 
-/* ── Hero Name — scramble reveal ── */
 .hero-name {
     font-size: 3.5rem;
     font-weight: 700;
@@ -86,7 +79,7 @@
         gradientShift 4s ease-in-out infinite 1s,
         neonPulse 3.5s ease-in-out infinite 1s;
     letter-spacing: 2px;
-    font-variant-numeric: tabular-nums; /* keeps scramble stable width */
+    font-variant-numeric: tabular-nums;
 }
 
 @keyframes nameReveal {
@@ -107,7 +100,6 @@
 @media (max-width: 768px) { .hero-name { font-size: 2.4rem; } }
 @media (max-width: 480px) { .hero-name { font-size: 1.9rem; } }
 
-/* ── Typing ── */
 .typing-container {
     font-size: 1.8rem;
     margin-bottom: 2rem;
@@ -148,7 +140,6 @@
 
 @media (max-width: 768px) { .typing-container { font-size: 1.3rem; } .typing-text { min-width: 160px; } }
 
-/* ── About ── */
 .about-section {
     margin: 2rem 0;
     padding: 1.8rem;
@@ -218,7 +209,6 @@
     text-align: justify;
 }
 
-/* ── Skill Badges ── */
 .skills-highlight {
     display: flex;
     justify-content: center;
@@ -262,7 +252,6 @@
 
 .skill-badge span { color: white; font-size: 0.9rem; font-weight: 500; }
 
-/* ── CTA Buttons ── */
 .hero-buttons {
     display: flex;
     justify-content: center;
@@ -287,7 +276,6 @@
     overflow: hidden;
 }
 
-/* Shimmer sweep */
 .btn::after {
     content: '';
     position: absolute;
@@ -327,7 +315,6 @@
     gap: 0.9rem;
 }
 
-/* ── Social links ── */
 .social-links {
     display: flex;
     justify-content: center;
@@ -370,7 +357,6 @@
     box-shadow: 0 8px 25px rgba(255,51,102,0.55), 0 0 0 3px rgba(255,51,102,0.18);
 }
 
-/* Responsive */
 @media (max-width: 768px) {
     .hero-buttons { gap: 1rem; flex-direction: column; align-items: center; }
     .btn { padding: 0.65rem 1.5rem; font-size: 0.9rem; min-width: 200px; justify-content: center; }

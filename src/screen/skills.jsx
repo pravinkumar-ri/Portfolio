@@ -1,4 +1,3 @@
-// screen/skills.jsx
 import React from 'react';
 import { skillCategories } from '../data/skillsData';
 import { useTilt } from '../component/useTilt';
@@ -8,7 +7,6 @@ import '../css/technicalSkills.css';
 
 const iconMap = { FileCode, Code, Braces, Box, Library, Server, Zap, Database, GitBranch, SquareCode };
 
-// Individual tilt card
 const TiltSkillCard = ({ skill, delay }) => {
     const { tiltProps, GlareLayer } = useTilt({ maxTilt: 16, scale: 1.06, glare: true });
     const IconComponent = iconMap[skill.icon] || Code;

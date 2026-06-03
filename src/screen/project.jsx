@@ -1,4 +1,3 @@
-// screen/project.jsx
 import React from 'react';
 import { projects } from '../data/projectData';
 import { useTilt } from '../component/useTilt';

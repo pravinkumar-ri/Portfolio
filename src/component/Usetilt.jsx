@@ -1,17 +1,5 @@
-// component/useTilt.js
 import { useRef } from 'react';
 
-/**
- * useTilt
- * Returns a ref to attach to a card element.
- * On hover the card tilts toward the cursor in 3D.
- *
- * @param {object} options
- *   maxTilt   – max degrees to tilt (default 14)
- *   scale     – how much to scale up on hover (default 1.04)
- *   glare     – show a glare overlay (default true)
- *   speed     – CSS transition duration ms (default 400)
- */
 export const useTilt = ({
     maxTilt = 14,
     scale = 1.04,
@@ -54,7 +42,6 @@ export const useTilt = ({
         }
     };
 
-    // Returns props to spread onto the card + a glare element to render inside
     const tiltProps = {
         ref,
         onMouseMove,

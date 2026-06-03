@@ -1,4 +1,3 @@
-// App.jsx
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Header from './component/header';
@@ -15,10 +14,8 @@ import './css/style.css';
 function App() {
     return (
         <>
-            {/* Particle background layer */}
             <ParticleCanvas />
 
-            {/* Cursor trail */}
             <MouseTrail color="#ff3366" size={18} count={28} thickness={false} />
 
             <Header />

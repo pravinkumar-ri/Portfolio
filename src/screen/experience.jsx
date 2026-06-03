@@ -1,4 +1,3 @@
-// screen/experience.jsx
 import React from 'react';
 import { experiences } from '../data/experienceData';
 import { useTilt } from '../component/useTilt';

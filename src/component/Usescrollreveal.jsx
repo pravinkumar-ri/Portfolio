@@ -1,14 +1,5 @@
-// component/useScrollReveal.js
 import { useEffect, useRef, useState } from 'react';
 
-/**
- * useScrollReveal
- * Returns [ref, isVisible].
- * Once the element enters the viewport it stays visible (one-shot).
- *
- * @param {number} threshold  – 0–1 intersection ratio to trigger (default 0.12)
- * @param {string} rootMargin – IntersectionObserver rootMargin (default '0px 0px -60px 0px')
- */
 export const useScrollReveal = (threshold = 0.12, rootMargin = '0px 0px -60px 0px') => {
     const ref = useRef(null);
     const [isVisible, setIsVisible] = useState(false);
@@ -21,7 +12,7 @@ export const useScrollReveal = (threshold = 0.12, rootMargin = '0px 0px -60px 0p
             ([entry]) => {
                 if (entry.isIntersecting) {
                     setIsVisible(true);
-                    observer.unobserve(el); // fire once
+                    observer.unobserve(el);
                 }
             },
             { threshold, rootMargin }
@@ -34,15 +25,6 @@ export const useScrollReveal = (threshold = 0.12, rootMargin = '0px 0px -60px 0p
     return [ref, isVisible];
 };
 
-/**
- * ScrollReveal
- * Convenience wrapper component.
- *
- * Props:
- *   delay   – extra CSS delay string (e.g. '0.2s')
- *   from    – direction: 'bottom' | 'left' | 'right' | 'top' | 'scale'
- *   className, style, children
- */
 export const ScrollReveal = ({
     children,
     delay = '0s',

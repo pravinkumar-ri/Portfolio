@@ -1,4 +1,3 @@
-// screen/contact.jsx
 import React from 'react';
 import { contactInfo } from '../data/contactData';
 import { useTilt } from '../component/useTilt';

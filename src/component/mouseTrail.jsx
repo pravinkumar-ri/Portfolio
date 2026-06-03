@@ -1,12 +1,4 @@
-// component/mouseTrail.jsx
 import { useEffect, useRef } from 'react';
-
-/**
- * Enhanced MouseTrail with:
- *   - Comet-style gradient tail
- *   - Sparkle burst on click
- *   - Subtle rotation wobble
- */
 export const MouseTrail = ({ color = '#ff3366', size = 18, count = 28, thickness = false }) => {
     const circlesRef = useRef([]);
 
@@ -17,16 +9,13 @@ export const MouseTrail = ({ color = '#ff3366', size = 18, count = 28, thickness
 
         const coords = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
 
-        // Thin trail on interactive elements
         const inputs = document.querySelectorAll('input, button, a, textarea, .btn, .nav-link, .magnetic-btn-wrapper');
         const handleOver = () => thickness && circles.forEach(c => c.classList.add('circle-thin'));
         const handleOut  = () => thickness && circles.forEach(c => c.classList.remove('circle-thin'));
         inputs.forEach(el => { el.addEventListener('mouseover', handleOver); el.addEventListener('mouseout', handleOut); });
 
-        // Initialize positions
         circles.forEach(c => { c.x = coords.x; c.y = coords.y; });
 
-        // Hide after idle
         let timeout;
         const onMove = (e) => {
             clearTimeout(timeout);
@@ -37,11 +26,9 @@ export const MouseTrail = ({ color = '#ff3366', size = 18, count = 28, thickness
         };
         window.addEventListener('mousemove', onMove);
 
-        // Sparkle burst on click
         const onMouseDown = (e) => createSparkles(e.clientX, e.clientY, color);
         window.addEventListener('mousedown', onMouseDown);
 
-        // Animation loop
         let animId;
         function loop() {
             let x = coords.x, y = coords.y;
@@ -51,7 +38,6 @@ export const MouseTrail = ({ color = '#ff3366', size = 18, count = 28, thickness
                 circle.style.top   = (y - size / 2) + 'px';
                 circle.style.transform = `scale(${t * 0.95 + 0.05})`;
                 circle.style.opacity = circle.classList.contains('circle-hidden') ? '0' : String(t * 0.85 + 0.08);
-
                 circle.x = x;
                 circle.y = y;
                 const next = circles[index + 1] || circles[0];
@@ -86,7 +72,6 @@ export const MouseTrail = ({ color = '#ff3366', size = 18, count = 28, thickness
     ));
 };
 
-// Imperative sparkle burst injected into DOM
 function createSparkles(x, y, color) {
     const COUNT = 12;
     for (let i = 0; i < COUNT; i++) {

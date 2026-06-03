@@ -1,4 +1,3 @@
-// screen/home.jsx
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { roles, skillBadges, socialLinks, aboutText } from '../data/homeData';
@@ -11,12 +10,10 @@ const Home = () => {
     const [displayText, setDisplayText]           = useState('');
     const [isDeleting, setIsDeleting]             = useState(false);
     const [typingSpeed, setTypingSpeed]           = useState(150);
-    // Scramble state for hero name
     const [scrambled, setScrambled]               = useState('R.I. Pravin Kumar');
     const REAL_NAME = 'R.I. Pravin Kumar';
     const CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$';
 
-    // Name scramble-reveal on mount
     useEffect(() => {
         let iteration = 0;
         const interval = setInterval(() => {
@@ -33,7 +30,6 @@ const Home = () => {
         return () => clearInterval(interval);
     }, []);
 
-    // Typing effect
     useEffect(() => {
         const role = roles[currentRoleIndex];
         const timer = setTimeout(() => {
@@ -72,23 +68,19 @@ const Home = () => {
         <div className="home-container">
             <section className="hero-section">
                 <div className="hero-content">
-                    {/* Greeting */}
                     <div className="greeting-text">
                         <span className="wave-emoji">👋</span>
                         <span>Hello, I'm</span>
                     </div>
 
-                    {/* Scramble-reveal name */}
                     <h1 className="hero-name">{scrambled}</h1>
 
-                    {/* Typing roles */}
                     <div className="typing-container">
                         <span className="typing-prefix">I'm a&nbsp;</span>
                         <span className="typing-text">{displayText}</span>
                         <span className="typing-cursor">|</span>
                     </div>
 
-                    {/* About — scroll-reveal */}
                     <ScrollReveal delay="0.1s" from="bottom">
                         <div className="about-section">
                             <h2 className="about-title">About Me</h2>
@@ -97,7 +89,6 @@ const Home = () => {
                         </div>
                     </ScrollReveal>
 
-                    {/* Skill badges */}
                     <ScrollReveal delay="0.15s" from="bottom">
                         <div className="skills-highlight">
                             {skillBadges.map((skill, i) => (
@@ -109,7 +100,6 @@ const Home = () => {
                         </div>
                     </ScrollReveal>
 
-                    {/* CTA buttons — magnetic */}
                     <ScrollReveal delay="0.2s" from="bottom">
                         <div className="hero-buttons">
                             <MagneticButton strength={0.5} as={Link} to="/contact" className="btn btn-primary">
@@ -123,7 +113,6 @@ const Home = () => {
                         </div>
                     </ScrollReveal>
 
-                    {/* Social icons — magnetic */}
                     <ScrollReveal delay="0.25s" from="bottom">
                         <div className="social-links">
                             {socialLinks.map((social, i) => (

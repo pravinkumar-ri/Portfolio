@@ -1,4 +1,3 @@
-// screen/education.jsx
 import React from 'react';
 import { educationData } from '../data/educationData';
 import { useTilt } from '../component/useTilt';

@@ -1,17 +1,4 @@
-// component/magneticButton.jsx
 import { useRef, useState } from 'react';
-
-/**
- * MagneticButton
- * Wraps any children in a div that magnetically attracts toward the cursor.
- *
- * Props:
- *   strength   – how strongly the element moves (default 0.35)
- *   className  – extra classes forwarded to the wrapper
- *   style      – extra inline styles forwarded to the wrapper
- *   as         – element type or component (default 'div')
- *   ...rest    – forwarded to the root element (e.g. href, onClick)
- */
 export const MagneticButton = ({
     children,
     strength = 0.35,

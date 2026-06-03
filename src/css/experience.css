@@ -85,12 +85,10 @@
     to   { opacity:1; transform: translateY(0)    scale(1); }
 }
 
-/* Left side cards */
 .experience-card.left-card {
     left: 0;
 }
 
-/* Right side cards */
 .experience-card.right-card {
     left: calc(50% + 40px);
 }
@@ -176,7 +174,6 @@
     z-index: 30;
 }
 
-/* Right side cards - move badge to left */
 .experience-card.right-card .experience-year-badge {
     right: auto;
     left: -12px;
@@ -255,7 +252,6 @@
 }
 .experience-card:hover .experience-description li { color: rgba(255,255,255,0.84); }
 
-/* Tech stack */
 .experience-tech-stack {
     margin-top: 1.5rem;
     padding-top: 1rem;
