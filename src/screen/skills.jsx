@@ -2,10 +2,10 @@ import React from 'react';
 import { skillCategories } from '../data/skillsData';
 import { useTilt } from '../component/useTilt';
 import { ScrollReveal } from '../component/useScrollReveal';
-import { Code, Database, GitBranch, FileCode, Braces, Box, Library, Server, Zap, SquareCode } from 'lucide-react';
+import { Code, Database, GitBranch, FileCode, Braces, Box, Library, Server, Zap } from 'lucide-react';
 import '../css/technicalSkills.css';
 
-const iconMap = { FileCode, Code, Braces, Box, Library, Server, Zap, Database, GitBranch, SquareCode };
+const iconMap = { FileCode, Code, Braces, Box, Library, Server, Zap, Database, GitBranch };
 
 const TiltSkillCard = ({ skill, delay }) => {
     const { tiltProps, GlareLayer } = useTilt({ maxTilt: 16, scale: 1.06, glare: true });

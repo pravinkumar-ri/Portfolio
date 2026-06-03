@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react';
+
 export const MagneticButton = ({
     children,
     strength = 0.35,

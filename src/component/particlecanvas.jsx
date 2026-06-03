@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
-const ParticleCanvas  = () => {
+const ParticleCanvas = () => {
     const canvasRef = useRef(null);
     const animRef = useRef(null);
     const mouseRef = useRef({ x: -9999, y: -9999 });
