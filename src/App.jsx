@@ -2,7 +2,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Header from './component/header';
 import { MouseTrail } from './component/mouseTrail';
-import { ParticleCanvas } from './component/particleCanvas.jsx';
+import ParticleCanvas from './component/particleCanvas.jsx';
 import Contact from './screen/contact';
 import Education from './screen/education';
 import Experience from './screen/experience';
