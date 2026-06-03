@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import logoImage from "../image/emojis.jpg";
+
+// Create a placeholder or use a data URL if the image doesn't exist
+const logoImage = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23ff3366'/%3E%3Ctext x='50' y='67' text-anchor='middle' fill='white' font-size='40' font-weight='bold'%3EP%3C/text%3E%3C/svg%3E";
 
 const Header = () => {
     const [collapse, setCollapse] = useState(false);

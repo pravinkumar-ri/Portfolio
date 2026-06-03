@@ -104,11 +104,14 @@ const ParticleCanvas = () => {
     }, []);
 
     return (
-        <canvas id="particle-canvas"
+        <canvas 
             ref={canvasRef}
             style={{
                 position: 'fixed',
-                inset: 0,
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
                 zIndex: 0,
                 pointerEvents: 'none',
                 opacity: 0.85,
