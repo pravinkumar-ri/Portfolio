@@ -2,7 +2,7 @@ import React from 'react';
 import { contactInfo } from '../data/contactData';
 import { useTilt } from '../component/useTilt';
 import { ScrollReveal } from '../component/useScrollReveal';
-import { MagneticButton } from '../component/magneticbutton';
+import { MagneticButton } from '../component/magneticButton';
 import '../css/contact.css';
 
 const TiltContactCard = ({ info }) => {

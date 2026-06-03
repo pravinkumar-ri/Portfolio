@@ -1,9 +1,9 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Header from './component/header';
-import MagneticButton from "../component/magneticbutton.jsx";
+import MagneticButton from "../component/magneticButton.jsx";
 import { MouseTrail } from './component/mouseTrail';
-import ParticleCanvas from './component/particlecanvas';
+import ParticleCanvas from './component/particleCanvas.jsx';
 import Contact from './screen/contact';
 import Education from './screen/education';
 import Experience from './screen/experience';

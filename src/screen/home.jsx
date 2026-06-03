@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { roles, skillBadges, socialLinks, aboutText } from '../data/homeData';
-import { MagneticButton } from '../component/magneticbutton';
+import { MagneticButton } from '../component/magneticButton';
 import { ScrollReveal } from '../component/useScrollReveal';
 import '../css/home.css';
 
