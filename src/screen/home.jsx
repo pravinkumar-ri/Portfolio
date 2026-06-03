@@ -103,7 +103,7 @@ const Home = () => {
                     <ScrollReveal delay="0.2s" from="bottom">
                         <div className="hero-buttons">
                             <MagneticButton strength={0.5} as={Link} to="/contact" className="btn btn-primary">
-                                Contact Me ✉️
+                                Contact Me 📧
                             </MagneticButton>
                             <MagneticButton strength={0.5} style={{ display: 'inline-flex' }}>
                                 <button onClick={handleDownloadResume} className="btn btn-secondary">

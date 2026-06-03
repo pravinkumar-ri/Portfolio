@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
-const ParticleCanvas = () => {
+const ParticleCanvas  = () => {
     const canvasRef = useRef(null);
     const animRef = useRef(null);
     const mouseRef = useRef({ x: -9999, y: -9999 });
@@ -104,14 +104,11 @@ const ParticleCanvas = () => {
     }, []);
 
     return (
-        <canvas 
+        <canvas id="particle-canvas"
             ref={canvasRef}
             style={{
                 position: 'fixed',
-                top: 0,
-                left: 0,
-                width: '100%',
-                height: '100%',
+                inset: 0,
                 zIndex: 0,
                 pointerEvents: 'none',
                 opacity: 0.85,

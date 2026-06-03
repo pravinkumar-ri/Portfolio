@@ -42,16 +42,16 @@ const Skills = () => (
         </ScrollReveal>
 
         <div className="skills-grid">
-            {skillCategories.map((category, catIdx) =>
+            {skillCategories.flatMap((category, catIdx) =>
                 category.skills.map((skill, skillIdx) => {
-                    const delay = `${category.delayOffset + skillIdx * 0.07}s`;
+                    const uniqueKey = `${catIdx}-${skill.name}-${skillIdx}`;
                     return (
                         <ScrollReveal
-                            key={`${catIdx}-${skillIdx}`}
+                            key={uniqueKey}
                             delay={`${catIdx * 0.1 + skillIdx * 0.07}s`}
                             from="bottom"
                         >
-                            <TiltSkillCard skill={skill} delay={delay} />
+                            <TiltSkillCard skill={skill} delay={`${category.delayOffset + skillIdx * 0.07}s`} />
                         </ScrollReveal>
                     );
                 })
