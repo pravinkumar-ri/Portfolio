@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 export const ParticleCanvas = () => {
     const canvasRef = useRef(null);
@@ -104,7 +104,7 @@ export const ParticleCanvas = () => {
     }, []);
 
     return (
-        <canvas
+        <canvas id="particle-canvas"
             ref={canvasRef}
             style={{
                 position: 'fixed',
