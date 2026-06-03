@@ -1,6 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Header from './component/header';
+import MagneticButton from "../component/magneticbutton.jsx";
 import { MouseTrail } from './component/mouseTrail';
 import ParticleCanvas from './component/particlecanvas';
 import Contact from './screen/contact';

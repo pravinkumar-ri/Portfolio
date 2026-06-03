@@ -2,7 +2,7 @@ import React from 'react';
 import { projects } from '../data/projectData';
 import { useTilt } from '../component/useTilt';
 import { ScrollReveal } from '../component/useScrollReveal';
-import { MagneticButton } from '../component/magneticButton';
+import { MagneticButton } from '../component/magneticbutton';
 import '../css/project.css';
 
 const TiltProjectCard = ({ project }) => {
