@@ -1,10 +1,8 @@
-/* Add this to the existing project.css file - anywhere at the top or bottom */
 .project-icon-wrapper svg {
     width: 24px;
     height: 24px;
 }
 
-/* Rest of your existing project.css content remains the same */
 .projects-header { text-align: center; margin-bottom: 3rem; }
 
 .projects-title {

@@ -10,6 +10,7 @@
 .hero-section::before {
     content: '';
     position: absolute;
+    overflow: hidden;
     top: 50%; left: 50%;
     transform: translate(-50%, -50%);
     width: 750px; height: 750px;
@@ -365,4 +366,43 @@
     .skill-badge span { font-size: 0.8rem; }
     .about-title { font-size: 1.5rem; }
     .about-description { font-size: 0.9rem; line-height: 1.6; }
+}
+.home-container {
+    overflow: hidden;
+    position: relative;
+}
+
+.hero-section {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+.hero-content {
+    width: 100%;
+    padding: 0 0.5rem;
+}
+
+@media (max-width: 480px) {
+    .typing-container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .typing-text {
+        min-width: unset;
+        width: 100%;
+        text-align: center;
+    }
+
+    .typing-prefix {
+        text-align: center;
+    }
+
+    .skills-highlight {
+        gap: 0.75rem;
+    }
+
+    .hero-buttons {
+        padding: 0 0.5rem;
+    }
 }
