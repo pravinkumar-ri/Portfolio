@@ -57,7 +57,7 @@ const Home = () => {
 
     const handleDownloadResume = () => {
         const link = document.createElement('a');
-        link.href = '/resume.pdf';
+        link.href = '/Pravin%20Kumar%20Resume.pdf';
         link.download = 'Pravin_Kumar_Resume.pdf';
         document.body.appendChild(link);
         link.click();
